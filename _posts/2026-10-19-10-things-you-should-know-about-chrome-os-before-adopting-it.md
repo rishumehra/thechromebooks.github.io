@@ -2,7 +2,7 @@
 title: 10 things you should know about Chrome OS before adopting it
 description: Thinking of switching to a Chromebook? Here are 10 essential things
   you should know about Google's Chrome OS before adopting it.
-date: 2026-10-19
+date: 2026-10-18
 categories:
   - Chrome OS
   - Guides
