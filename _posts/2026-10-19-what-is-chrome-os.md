@@ -2,7 +2,7 @@
 title: What is Chrome OS?
 description: Google’s Chrome OS is a lightweight operating system built on a
   Gentoo-based Linux kernel with Google Chrome as its primary user interface.
-date: 2021-02-20
+date: 2026-02-16
 categories:
   - Chrome OS
   - Basics
