@@ -27,7 +27,7 @@ github:
   username: rishumehra # change to your GitHub username
 
 twitter:
-  username: rishumehra # change to your Twitter username
+  username: thechromebooks # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -36,11 +36,11 @@ social:
   email: mailto:rishu.techwriter@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/rishumehra # change to your Twitter homepage
+    - https://twitter.com/thechromebooks # change to your Twitter homepage
     - https://github.com/rishumehra # change to your GitHub homepage
     # Uncomment below to add more social links
-    - https://www.facebook.com/rishumehra
-    - https://www.linkedin.com/in/rishumehra
+    - https://www.facebook.com/thechromebooks
+    - hhttps://www.instagram.com/thechromebooks
 
 # Site Verification Settings
 webmaster_verifications:
