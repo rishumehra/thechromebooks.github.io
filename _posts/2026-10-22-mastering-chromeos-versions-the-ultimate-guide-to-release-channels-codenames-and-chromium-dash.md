@@ -4,7 +4,7 @@ title: "Mastering ChromeOS Versions: The Ultimate Guide to Release Channels,
 description: Learn how to decode ChromeOS version numbers, navigate Stable,
   Beta, Dev, Canary, and LTS release channels, and use Google's Chromium Dash to
   track serving builds, enterprise pins, and recovery images.
-date: 2026-10-22
+date: 2026-10-21
 categories:
   - Chrome OS
   - Guides
