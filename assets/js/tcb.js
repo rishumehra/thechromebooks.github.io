@@ -237,6 +237,12 @@
   const tocLists = [...document.querySelectorAll('[data-toc-list]')];
   const headings = [...document.querySelectorAll('.prose h2, .prose h3')];
 
+  const getHeaderOffset = () => {
+    const header = document.querySelector('.site-header');
+    const h = header ? header.getBoundingClientRect().height : 69;
+    return h + 16;
+  };
+
   if (headings.length) {
     headings.forEach((heading, index) => {
       if (!heading.id) heading.id = `section-${index + 1}`;
@@ -259,10 +265,27 @@
       });
     };
 
+    tocLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+        const id = href.slice(1);
+        const el = document.getElementById(id);
+        if (!el) return;
+        event.preventDefault();
+        const offset = getHeaderOffset();
+        const y = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        history.replaceState(null, '', href);
+        setActive(id);
+      });
+    });
+
     let ticking = false;
     const updateActive = () => {
       ticking = false;
-      const marker = window.scrollY + 110;
+      const offset = getHeaderOffset();
+      const marker = window.scrollY + offset + 4;
       let current = headings[0];
       headings.forEach((heading) => {
         if (heading.offsetTop <= marker) current = heading;
