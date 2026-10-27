@@ -1397,7 +1397,7 @@ p {
 
 .post-layout {
   display: grid;
-  grid-template-columns: 232px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 40px;
   align-items: start;
   margin-top: 40px;
@@ -2137,7 +2137,7 @@ p {
   }
 
   .post-layout {
-    grid-template-columns: 200px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
   }
 
