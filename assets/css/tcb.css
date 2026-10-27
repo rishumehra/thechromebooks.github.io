@@ -1397,14 +1397,14 @@ p {
 
 .post-layout {
   display: grid;
-  grid-template-columns: 232px minmax(0, var(--max)) 1fr;
+  grid-template-columns: 232px minmax(0, calc(var(--max) - 232px - 40px)) 1fr;
   gap: 40px;
   align-items: start;
   margin-top: 40px;
 }
 
 .post-layout.no-toc {
-  grid-template-columns: minmax(0, var(--max));
+  grid-template-columns: minmax(0, calc(var(--max) - 272px));
 }
 
 .toc {
@@ -2137,12 +2137,12 @@ p {
   }
 
   .post-layout {
-    grid-template-columns: 200px minmax(0, var(--max));
+    grid-template-columns: 200px minmax(0, calc(var(--max) - 200px - 32px));
     gap: 32px;
   }
 
   .post-layout.no-toc {
-    grid-template-columns: minmax(0, var(--max));
+    grid-template-columns: minmax(0, calc(var(--max) - 232px));
   }
 }
 
