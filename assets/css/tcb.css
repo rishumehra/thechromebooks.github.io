@@ -1121,6 +1121,8 @@ p {
   border-radius: var(--radius-lg);
   background: linear-gradient(135deg, #0b57d0 0%, #0842a0 55%, #062e6f 100%);
   color: #fff;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .newsletter-card::after {
