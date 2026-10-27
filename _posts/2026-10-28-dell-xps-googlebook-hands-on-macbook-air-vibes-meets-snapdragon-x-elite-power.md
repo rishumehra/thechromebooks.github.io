@@ -16,7 +16,9 @@ tags:
   - googlebook-os
   - hardware
   - chrome-unboxed
-image: /assets/img/posts/watermarked_img_951042643247291096.jpg
+image: /assets/img/posts/Screenshot 2026-10-28 at 1.44.44 AM.png
+illustration: Unboxed setup captured via Chrome Unboxed (Special thanks to Robby
+  Payne and the Chrome Unboxed team for the detailed first look!).
 pin: true
 featured: true
 tldr:
