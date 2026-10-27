@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Chromebooks cover illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#202124"/>
+      <stop offset=".55" stop-color="#3c4043"/>
+      <stop offset="1" stop-color="#5f6368"/>
+    </linearGradient>
+    <radialGradient id="blue" cx=".72" cy=".3" r=".55">
+      <stop offset="0" stop-color="#8ab4f8" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#8ab4f8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="green" cx=".2" cy=".8" r=".5">
+      <stop offset="0" stop-color="#81c995" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#81c995" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#blue)"/>
+  <rect width="1200" height="630" fill="url(#green)"/>
+  <g transform="translate(300 170)">
+    <rect x="0" y="0" width="600" height="340" rx="16" fill="#111214" stroke="#8e918f" stroke-opacity=".55" stroke-width="2"/>
+    <rect x="18" y="18" width="564" height="304" rx="8" fill="#0b57d0" fill-opacity=".18"/>
+    <rect x="40" y="44" width="180" height="12" rx="6" fill="#8ab4f8" fill-opacity=".8"/>
+    <rect x="40" y="72" width="300" height="12" rx="6" fill="#ffffff" fill-opacity=".22"/>
+    <rect x="40" y="100" width="240" height="12" rx="6" fill="#ffffff" fill-opacity=".12"/>
+    <rect x="392" y="44" width="170" height="150" rx="12" fill="#ffffff" fill-opacity=".08"/>
+    <rect x="40" y="240" width="150" height="60" rx="12" fill="#5bb974" fill-opacity=".35"/>
+    <rect x="206" y="240" width="150" height="60" rx="12" fill="#8ab4f8" fill-opacity=".3"/>
+    <rect x="372" y="240" width="150" height="60" rx="12" fill="#fdd663" fill-opacity=".3"/>
+  </g>
+  <path d="M240 520h720l40 44a16 16 0 0 1-13 25H213a16 16 0 0 1-13-25z" fill="#c4c7c5" fill-opacity=".22"/>
+  <rect x="500" y="532" width="200" height="8" rx="4" fill="#ffffff" fill-opacity=".45"/>
+</svg>

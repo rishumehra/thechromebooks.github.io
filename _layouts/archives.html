@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<main class="page" id="main">
+  <div class="wrap">
+    <header class="archive-head">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span aria-current="page">Archives</span>
+      </nav>
+      <h1 class="page-title">Archives</h1>
+      <p class="page-dek">{{ site.posts | size }} posts, newest first.</p>
+    </header>
+
+    <div class="archive-list">
+      {% assign last_year = '' %}
+      {% for post in site.posts %}
+        {% assign year = post.date | date: '%Y' %}
+        {% if year != last_year %}
+          {% unless forloop.first %}</ul>{% endunless %}
+          <h2 class="archive-year">{{ year }}</h2>
+          <ul class="archive-items">
+          {% assign last_year = year %}
+        {% endif %}
+        <li class="archive-item">
+          <time class="archive-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d' }}</time>
+          <a class="archive-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <span class="archive-cat">{{ post.categories.first | default: 'Post' }}</span>
+        </li>
+        {% if forloop.last %}</ul>{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</main>

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<main class="page" id="main">
+  <div class="wrap">
+    <header class="archive-head">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <a href="{{ '/categories/' | relative_url }}">Categories</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span aria-current="page">{{ page.title }}</span>
+      </nav>
+      <h1 class="page-title">{{ page.title }}</h1>
+      <p class="page-dek">
+        {{ page.posts | size }} post{% if page.posts.size != 1 %}s{% endif %} in this category.
+        <a href="{{ '/categories/' | relative_url }}">Browse all categories</a>
+      </p>
+    </header>
+
+    <div class="grid category-grid">
+      {% for post in page.posts %}
+        {% include tcb-card.html post=post class='third' %}
+      {% endfor %}
+    </div>
+  </div>
+</main>

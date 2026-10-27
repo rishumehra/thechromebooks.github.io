@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Googlebook cover illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f6b3f"/>
+      <stop offset=".55" stop-color="#188038"/>
+      <stop offset="1" stop-color="#5bb974"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".2" cy=".15" r=".75">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".06"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(640 150)">
+    <rect x="0" y="0" width="420" height="270" rx="18" fill="url(#screen)" stroke="#ffffff" stroke-opacity=".65" stroke-width="3"/>
+    <rect x="26" y="26" width="368" height="196" rx="8" fill="#ffffff" fill-opacity=".10"/>
+    <path d="M-42 300h504l26 42a14 14 0 0 1-12 21H-56a14 14 0 0 1-12-21z" fill="#ffffff" fill-opacity=".35"/>
+    <rect x="140" y="312" width="140" height="10" rx="5" fill="#ffffff" fill-opacity=".7"/>
+  </g>
+  <g fill="#ffffff" fill-opacity=".92">
+    <rect x="120" y="360" width="210" height="16" rx="8"/>
+    <rect x="120" y="392" width="290" height="16" rx="8" fill-opacity=".55"/>
+    <rect x="120" y="424" width="160" height="16" rx="8" fill-opacity=".3"/>
+  </g>
+  <circle cx="150" cy="200" r="46" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="3"/>
+  <path d="M132 200l13 14 26-30" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

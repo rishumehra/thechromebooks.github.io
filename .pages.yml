@@ -35,6 +35,35 @@ content:
         label: Pin this post to top?
         type: boolean
         default: false
+      - name: featured
+        label: Feature on the homepage?
+        type: boolean
+        default: false
+      - name: tldr
+        label: TL;DR bullets (optional)
+        type: string
+        list: true
+      - name: verdict
+        label: Quick take box (optional)
+        type: object
+        fields:
+          - name: title
+            label: Heading
+            type: string
+          - name: score
+            label: Score out of 10
+            type: number
+          - name: caption
+            label: Score caption
+            type: string
+          - name: read_if
+            label: Read this if
+            type: string
+            list: true
+          - name: skip_if
+            label: Skip it if
+            type: string
+            list: true
       - name: body
         label: Content
         type: rich-text

@@ -1,0 +1,22 @@
+{% assign post = include.post %}
+{% capture cover %}{% include tcb-cover.html post=post %}{% endcapture %}
+{% assign cover = cover | strip %}
+{% capture read_time %}{% include tcb-read-time.html post=post %}{% endcapture %}
+{% assign read_time = read_time | strip %}
+
+<article class="related-card">
+  <a href="{{ post.url | relative_url }}" aria-hidden="true" tabindex="-1">
+    <img src="{{ cover }}" alt="" width="1200" height="630" loading="lazy" decoding="async">
+  </a>
+  <div class="related-body">
+    <div class="pill-row">
+      {% if post.categories.first %}{% include tcb-pill.html name=post.categories.first %}{% endif %}
+    </div>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <div class="card-meta">
+      <span>{{ post.date | date: '%b %-d, %Y' }}</span>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <span>{{ read_time }}</span>
+    </div>
+  </div>
+</article>

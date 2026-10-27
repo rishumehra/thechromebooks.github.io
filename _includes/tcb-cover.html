@@ -1,0 +1,34 @@
+{% comment %}
+  Resolve a post cover image.
+  Priority: front-matter `image` → category fallback illustration.
+  Pass the post as `include.post`.
+{% endcomment %}
+{% assign cover = include.post.image.path | default: include.post.image %}
+
+{% if cover %}
+  {% unless cover contains '://' %}
+    {% assign cover = cover | relative_url %}
+  {% endunless %}
+{% else %}
+  {% assign cat = include.post.categories.first | slugify %}
+  {% case cat %}
+    {% when 'chromebooks' %}
+      {% assign cover = '/assets/img/covers/chromebooks.svg' %}
+    {% when 'googlebook' %}
+      {% assign cover = '/assets/img/covers/googlebook.svg' %}
+    {% when 'googlebook-os' %}
+      {% assign cover = '/assets/img/covers/googlebook.svg' %}
+    {% when 'chrome-enterprise' %}
+      {% assign cover = '/assets/img/covers/enterprise.svg' %}
+    {% when 'reviews' %}
+      {% assign cover = '/assets/img/covers/googlebook.svg' %}
+    {% when 'news' %}
+      {% assign cover = '/assets/img/covers/googlebook.svg' %}
+    {% when 'buying-guide' %}
+      {% assign cover = '/assets/img/covers/chromebooks.svg' %}
+    {% else %}
+      {% assign cover = '/assets/img/covers/chromeos.svg' %}
+  {% endcase %}
+  {% assign cover = cover | relative_url %}
+{% endif %}
+{{- cover -}}

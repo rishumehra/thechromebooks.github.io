@@ -1,0 +1,21 @@
+---
+layout: compress
+---
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" data-theme="light">
+  {% include tcb-head.html %}
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="progress-track" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    {% include tcb-header.html %}
+    {% include tcb-search.html %}
+
+    {{ content }}
+
+    {% include tcb-footer.html %}
+
+    <script src="{{ '/assets/js/tcb.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
+  </body>
+</html>

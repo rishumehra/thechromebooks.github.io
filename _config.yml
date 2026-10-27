@@ -43,6 +43,12 @@ social:
     - https://www.facebook.com/thechromebooks
     - https://www.instagram.com/thechromebooks
 
+# Newsletter Settings
+newsletter:
+  # Buttondown username, e.g. "thechromebooks". While empty, the newsletter
+  # form renders in a disabled "launching soon" state.
+  buttondown_username: "rishumehra"
+
 # Site Verification Settings
 webmaster_verifications:
   google: # fill in your Google verification code
@@ -137,9 +143,11 @@ assets:
     env: # [development | production]
 
 pwa:
-  enabled: true # The option for PWA feature (installable)
+  # Disabled: the custom theme ships its own assets, and a stale service
+  # worker would keep serving the retired Chirpy stylesheet.
+  enabled: false # The option for PWA feature (installable)
   cache:
-    enabled: true # The option for PWA offline cache
+    enabled: false # The option for PWA offline cache
     # Paths defined here will be excluded from the PWA cache.
     # Usually its value is the `baseurl` of another website that
     # shares the same domain name as the current website.
@@ -202,7 +210,9 @@ compress_html:
   profile: false
   blanklines: false
   ignore:
-    envs: [development]
+    # The custom theme relies on nested <pre>/<table> output from Rouge.
+    # Jekyll's HTML compressor mangles those blocks, so keep raw HTML.
+    envs: [development, production]
 
 exclude:
   - "*.gem"

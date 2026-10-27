@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<main class="page" id="main">
+  <div class="wrap">
+    <header class="archive-head">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span aria-current="page">Categories</span>
+      </nav>
+      <h1 class="page-title">Categories</h1>
+      <p class="page-dek">Every topic on {{ site.title }}, from ChromeOS basics to enterprise fleet management.</p>
+    </header>
+
+    {% assign sorted_categories = site.categories | sort %}
+    <div class="category-tiles">
+      {% for category in sorted_categories %}
+        {% assign name = category[0] %}
+        {% assign posts = category[1] %}
+        {% assign slug = name | slugify %}
+        <a class="category-tile" href="{{ '/categories/' | append: slug | append: '/' | relative_url }}">
+          <span class="category-tile-name">{{ name }}</span>
+          <span class="category-tile-count">{{ posts.size }} post{% if posts.size != 1 %}s{% endif %}</span>
+          <span class="category-tile-latest">Latest: {{ posts.first.date | date: '%b %-d, %Y' }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</main>

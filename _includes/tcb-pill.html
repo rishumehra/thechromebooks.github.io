@@ -1,0 +1,28 @@
+{% comment %}Usage: include tcb-pill.html name="Chrome OS" [variant="plain"]{% endcomment %}
+{% assign slug = include.name | slugify %}
+{% case slug %}
+  {% when 'chrome-os' %}
+    {% assign tone = 'chrome-os' %}
+  {% when 'chromebooks' %}
+    {% assign tone = 'chromebooks' %}
+  {% when 'googlebook' %}
+    {% assign tone = 'googlebook' %}
+  {% when 'googlebook-os' %}
+    {% assign tone = 'googlebook' %}
+  {% when 'chrome-enterprise' %}
+    {% assign tone = 'enterprise' %}
+  {% when 'guides' %}
+    {% assign tone = 'guides' %}
+  {% when 'tutorials' %}
+    {% assign tone = 'guides' %}
+  {% else %}
+    {% assign tone = 'plain' %}
+{% endcase %}
+{% if include.variant == 'plain' %}
+  {% assign tone = 'plain' %}
+{% endif %}
+<a
+  class="pill{% if tone == 'plain' %} plain{% endif %}"
+  href="{{ '/categories/' | append: slug | append: '/' | relative_url }}"
+  {% unless tone == 'plain' %}data-cat="{{ tone }}"{% endunless %}
+>{{ include.name }}</a>

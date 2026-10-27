@@ -1,0 +1,210 @@
+---
+layout: default
+---
+{% assign posts = paginator.posts | default: site.posts %}
+
+{% assign hero = nil %}
+{% for post in posts %}
+  {% if post.featured %}
+    {% assign hero = post %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% for post in posts %}
+  {% if hero %}{% break %}{% endif %}
+  {% if post.pin %}
+    {% assign hero = post %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% unless hero %}
+  {% assign hero = posts.first %}
+{% endunless %}
+
+<main class="page" id="main">
+  <div class="wrap">
+    <div class="layout">
+      <div>
+        {% if hero %}
+          {% capture hero_cover %}{% include tcb-cover.html post=hero %}{% endcapture %}
+          {% assign hero_cover = hero_cover | strip %}
+          {% capture hero_read_time %}{% include tcb-read-time.html post=hero %}{% endcapture %}
+          {% assign hero_read_time = hero_read_time | strip %}
+
+          {% assign is_guide = false %}
+          {% for cat in hero.categories %}
+            {% assign cat_slug = cat | slugify %}
+            {% if cat_slug == 'guides' or cat_slug == 'tutorials' %}
+              {% assign is_guide = true %}
+            {% endif %}
+          {% endfor %}
+
+          <section class="hero" aria-labelledby="hero-title">
+            <div>
+              <span class="eyebrow">
+                <span class="dot"></span>
+                {% if hero.pin or hero.featured %}Editor&rsquo;s pick{% else %}Latest{% endif %}
+              </span>
+              <h1 class="hero-title" id="hero-title">
+                <a href="{{ hero.url | relative_url }}">{{ hero.title }}</a>
+              </h1>
+              <p class="hero-dek">{{ hero.description | default: hero.excerpt | strip_html | truncate: 220 }}</p>
+              <div class="hero-meta">
+                <span>{{ hero.date | date: '%b %-d, %Y' }}</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>{{ hero_read_time }}</span>
+                {% if hero.categories.size > 0 %}
+                  <span aria-hidden="true">&middot;</span>
+                  <span>
+                    {% for cat in hero.categories limit: 2 %}
+                      {{ cat }}{% unless forloop.last %} &middot; {% endunless %}
+                    {% endfor %}
+                  </span>
+                {% endif %}
+              </div>
+              <div class="hero-actions">
+                <a class="btn btn-filled" href="{{ hero.url | relative_url }}">
+                  {% if is_guide %}Read the guide{% else %}Read the article{% endif %}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a class="btn btn-outline" href="{% if is_guide %}{{ '/categories/guides/' | relative_url }}{% else %}{{ '/archives/' | relative_url }}{% endif %}">
+                  {% if is_guide %}Browse all guides{% else %}Browse all posts{% endif %}
+                </a>
+              </div>
+            </div>
+            <div class="hero-cover">
+              <img src="{{ hero_cover }}" alt="" width="1200" height="630" fetchpriority="high">
+            </div>
+          </section>
+        {% endif %}
+
+        <section class="section" id="latest" aria-labelledby="latest-title">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title" id="latest-title">Latest coverage</h2>
+              <p class="section-sub">ChromeOS, Chromebooks, Googlebook, and the enterprise stack.</p>
+            </div>
+            <a class="section-link" href="{{ '/archives/' | relative_url }}">See all posts &rarr;</a>
+          </div>
+
+          <div class="grid">
+            {% assign card_count = 0 %}
+            {% for post in posts %}
+              {% if hero and post.url == hero.url %}{% continue %}{% endif %}
+              {% if card_count < 5 %}
+                {% include tcb-card.html post=post class='third' %}
+                {% assign card_count = card_count | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% if card_count == 0 %}
+            <p class="empty-state">No posts yet. Add one in Pages CMS and it will show up here.</p>
+          {% endif %}
+        </section>
+
+        {% assign remaining = posts.size | minus: 6 %}
+        {% if remaining > 0 %}
+          <section class="section" aria-labelledby="more-title">
+            <div class="section-head">
+              <div>
+                <h2 class="section-title" id="more-title">From the archive</h2>
+                <p class="section-sub">Evergreen explainers and buying advice.</p>
+              </div>
+              <a class="section-link" href="{{ '/archives/' | relative_url }}">All archives &rarr;</a>
+            </div>
+            <div class="brief-list">
+              {% assign shown = 0 %}
+              {% for post in posts %}
+                {% if hero and post.url == hero.url %}{% continue %}{% endif %}
+                {% assign shown = shown | plus: 1 %}
+                {% if shown > 5 %}
+                  <a class="brief-item" href="{{ post.url | relative_url }}">
+                    <span class="brief-cat">{{ post.categories.first | default: 'Post' }}</span>
+                    <span class="brief-title">{{ post.title }}</span>
+                    <span class="brief-date">{{ post.date | date: '%b %-d, %Y' }}</span>
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+
+        {% if paginator.total_pages > 1 %}
+          <nav class="pagination" aria-label="Pagination">
+            {% if paginator.previous_page %}
+              <a class="btn btn-outline" href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer</a>
+            {% endif %}
+            <span class="pagination-count">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+            {% if paginator.next_page %}
+              <a class="btn btn-outline" href="{{ paginator.next_page_path | relative_url }}">Older &rarr;</a>
+            {% endif %}
+          </nav>
+        {% endif %}
+      </div>
+
+      <aside class="rail" aria-label="Sidebar">
+        <section class="rail-card">
+          <div class="rail-head">
+            <h2 class="rail-title">Start here</h2>
+            <p class="rail-note">New to ChromeOS? Read these first.</p>
+          </div>
+          <div class="rail-list">
+            {% for slug in site.data.home.start_here %}
+              {% assign pick = site.posts | where: 'slug', slug | first %}
+              {% if pick %}
+                {% capture pick_read_time %}{% include tcb-read-time.html post=pick %}{% endcapture %}
+                {% assign pick_read_time = pick_read_time | strip %}
+                <a class="rail-item" href="{{ pick.url | relative_url }}">
+                  <span class="rail-num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+                  <span>
+                    <span class="rail-item-title">{{ pick.title }}</span>
+                    <span class="rail-item-meta">{{ pick.categories.first | default: 'Basics' }} &middot; {{ pick_read_time }}</span>
+                  </span>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </section>
+
+        {% assign tracker = site.data.home.release_tracker %}
+        {% if tracker %}
+          <section class="rail-card">
+            <div class="rail-head">
+              <h2 class="rail-title">Release tracker</h2>
+              <p class="rail-note">{{ tracker.note }}</p>
+            </div>
+            <div class="tracker">
+              {% for channel in tracker.channels %}
+                <div class="tracker-row">
+                  <span class="tracker-label"><span class="tracker-dot {{ channel.tone }}"></span> {{ channel.label }}</span>
+                  <span class="tracker-value">{{ channel.value }}</span>
+                </div>
+              {% endfor %}
+            </div>
+            <p class="tracker-foot">Always confirm on Chromium Dash before pinning a fleet.</p>
+            {% assign tracker_post = site.posts | where: 'slug', tracker.link_slug | first %}
+            {% if tracker_post %}
+              <a class="rail-link" href="{{ tracker_post.url | relative_url }}">How versioning works &rarr;</a>
+            {% endif %}
+          </section>
+        {% endif %}
+
+        {% if site.data.home.trending_tags.size > 0 %}
+          <section class="rail-card">
+            <div class="rail-head">
+              <h2 class="rail-title">Trending tags</h2>
+            </div>
+            <div class="tag-cloud">
+              {% for tag in site.data.home.trending_tags %}
+                <a class="tag" href="{{ '/tags/' | append: tag | append: '/' | relative_url }}">{{ tag }}</a>
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+      </aside>
+    </div>
+
+    {% include tcb-newsletter.html id='home-newsletter' %}
+  </div>
+</main>

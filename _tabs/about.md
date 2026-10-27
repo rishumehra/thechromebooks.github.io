@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+order: 4
 ---
 
 Welcome to **TheChromebooks.com** — your ultimate destination for everything related to ChromeOS, Chromebooks, and the evolving ecosystem of modern cloud-first computing.

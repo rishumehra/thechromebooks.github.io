@@ -1,0 +1,37 @@
+# Curated homepage modules. Edit these lists instead of the layout.
+
+# Post slugs (filename without the date and .md) shown in "Start here".
+start_here:
+  - what-is-chrome-os
+  - 10-things-you-should-know-about-chrome-os-before-adopting-it
+  - 5-questions-you-should-ask-to-choose-the-correct-chromebook-for-you
+
+# Tags shown in the "Trending tags" rail card.
+trending_tags:
+  - chrome-os
+  - chromebooks
+  - googlebook
+  - googlebook-os
+  - android-17
+  - buying-guide
+  - chrome-enterprise
+  - chromium-dash
+  - security
+
+# Illustrative snapshot only. Update the values when milestones move.
+release_tracker:
+  note: Illustrative snapshot, not a live feed.
+  link_slug: mastering-chromeos-versions-the-ultimate-guide-to-release-channels-codenames-and-chromium-dash
+  channels:
+    - label: Stable
+      value: M156
+      tone: stable
+    - label: Beta
+      value: M157
+      tone: beta
+    - label: Dev
+      value: M158
+      tone: beta
+    - label: LTS
+      value: M150
+      tone: lts

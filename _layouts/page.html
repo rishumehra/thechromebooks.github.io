@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<main class="page" id="main">
+  <div class="wrap">
+    <article class="page-shell">
+      <header class="page-head">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <span class="crumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">{{ page.title }}</span>
+        </nav>
+        <h1 class="page-title">{{ page.title }}</h1>
+        {% if page.description %}
+          <p class="page-dek">{{ page.description }}</p>
+        {% endif %}
+      </header>
+      <div class="prose">
+        {{ content }}
+      </div>
+    </article>
+
+    {% include tcb-newsletter.html id='page-newsletter' %}
+  </div>
+</main>
