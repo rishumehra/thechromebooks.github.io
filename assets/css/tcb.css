@@ -1410,8 +1410,8 @@ p {
 }
 
 .toc {
-  position: sticky;
-  top: 92px;
+  position: static;
+  align-self: start;
 }
 
 .toc-head {
