@@ -37,9 +37,10 @@ Cameyo is a **Virtual App Delivery (VAD)** platform.
 Instead of streaming an entire, clunky Windows 11 desktop over the internet, Cameyo streams **only the specific application window** you need, rendering it seamlessly in the cloud and delivering it over ultra-lightweight HTML5.
 
 To the end user sitting at a Chromebook, it doesn't feel like remote computing at all:
-* There is no secondary Windows taskbar or Start menu to confuse people.
-* The application icon sits right on the ChromeOS shelf (dock) next to Gmail and Slack.
-* It launches in its own isolated window, responds to native keyboard shortcuts, and supports standard window snapping.
+
+- There is no secondary Windows taskbar or Start menu to confuse people.
+- The application icon sits right on the ChromeOS shelf (dock) next to Gmail and Slack.
+- It launches in its own isolated window, responds to native keyboard shortcuts, and supports standard window snapping.
 
 It bridges the gap between old-school Win32 software and modern cloud architecture without forcing companies into expensive, multi-year legacy code rewrites.
 
@@ -49,12 +50,14 @@ It bridges the gap between old-school Win32 software and modern cloud architectu
 
 For two decades, enterprise IT relied on Virtual Desktop Infrastructure (VDI). While it served its purpose, running full virtual desktops on modern lightweight endpoints created as many headaches as it solved:
 
+
 | Feature | Legacy VDI (Citrix / Horizon) | Cameyo Virtual App Delivery |
-| :--- | :--- | :--- |
+| -------------------- | --------------------------------------------- | -------------------------------------------------- |
 | **User Interface** | Streams full OS desktop inside a window | Streams individual apps directly into the shelf |
 | **Bandwidth Demand** | High (5–15+ Mbps per active seat) | Low (sub-1 Mbps typical HTML5 canvas stream) |
-| **File Handling** | Confusing remote drive letters (C:\, Z:\) | Directly hooked into ChromeOS Files & Google Drive |
+| **File Handling** | Confusing remote drive letters (C: Z: | Directly hooked into ChromeOS Files & Google Drive |
 | **Cost Profile** | Heavy compute, storage, and dual-OS licensing | Targeted compute; pay only for app uptime |
+
 
 The biggest friction point in daily workflows was file management. Under standard VDI, saving a document meant navigating a remote server’s directory tree and hoping it synced back down. Cameyo connects directly into the native ChromeOS file system and Google Drive. When you hit `Ctrl + S` inside a virtualized legacy app, your familiar Drive and local Downloads folders appear right away.
 
@@ -76,7 +79,7 @@ Before Google integrated Cameyo directly, deploying Windows apps to non-Windows 
 
 1. **Package the App:** Admins upload or link the Windows application package (.exe or .msi) to their Cameyo cloud cluster or private VPC.
 2. **Assign Organizational Units (OUs):** Under *Devices > Chrome > Apps & Extensions*, the admin selects which departments (e.g., Finance, Warehouse Operations) need access.
-3. **Silent Fleet Push:** The app is configured to "Force Install + Pin to Shelf." 
+3. **Silent Fleet Push:** The app is configured to "Force Install + Pin to Shelf."
 
 The next time an employee opens their Chromebook lid, the app icon is already waiting in their launcher. No user installation guides, no driver troubleshooting, and no manual endpoint patching.
 
