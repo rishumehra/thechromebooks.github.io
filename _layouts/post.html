@@ -200,3 +200,22 @@ layout: default
     {% include tcb-newsletter.html id='post-newsletter' title='Get the next deep dive' text='One weekly email on ChromeOS updates, Chromebook hardware, and Googlebook. No spam, no daily drip.' %}
   </div>
 </main>
+
+  {% if page.persona and page.persona != "none" %}
+  <section class="persona-hardware-suggestions" style="margin-top: 40px; padding-top: 24px; border-top: 2px solid #e2e8f0;">
+    <h3>Recommended Gear for This Reader Persona</h3>
+    <p style="color: #5f6368; font-size: 14px; margin-bottom: 16px;">Hand-picked recommendations based on this article's focus:</p>
+    <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      {% for item in site.data.hardware.items %}
+        {% if item.personas contains page.persona %}
+          <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #f8f9fa;">
+            <span style="font-size: 11px; font-weight: 700; color: #1a73e8; text-transform: uppercase;">{{ item.badge }}</span>
+            <h4 style="margin: 6px 0; font-size: 16px;"><a href="{{ item.url_global }}" target="_blank" rel="nofollow sponsored noopener" style="text-decoration: none; color: #202124;">{{ item.name }}</a></h4>
+            <p style="font-size: 13px; color: #5f6368; margin: 4px 0 10px 0;">{{ item.specs }}</p>
+            <a href="{{ item.url_global }}" target="_blank" rel="nofollow sponsored noopener" style="display: inline-block; background: #1a73e8; color: #fff; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600;">Check Price ({{ item.price_global }}) →</a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
