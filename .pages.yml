@@ -69,5 +69,96 @@ content:
             type: string
             list: true
       - name: body
-        label: Content
-        type: rich-text
+        label: Content (Markdown & HTML)
+        type: text
+      - name: persona
+        label: Reader Persona for Bottom Hardware Suggestions (optional)
+        type: select
+        options:
+          values:
+            - value: none
+              label: None (Hide hardware suggestions on this post)
+            - value: googlebook-flagship
+              label: Googlebook Flagship & Early Adopter ($899+)
+            - value: enterprise-it
+              label: Enterprise, IT Admin & Fleet Manager (CTL / vPro / Docks)
+            - value: power-user-dev
+              label: Power User, Developer & Linux Multitasker (16GB RAM)
+            - value: everyday-plus
+              label: Mainstream Chromebook Plus Buyer ($399–$749)
+            - value: student-edu
+              label: Student, Classroom & Detachable Tablet Buyer
+            - value: accessories-desk
+              label: Desk Setup, Docks & Accessories Focus
+        default: none
+      - name: custom_picks
+        label: Hand-Picked Hardware IDs for This Post (optional, e.g. acer-gb14, hp-gb14)
+        type: string
+        list: true
+  - name: hardware
+    label: Hardware & Accessories Catalog
+    type: file
+    path: _data/hardware.yml
+    fields:
+      - name: items
+        label: All Chromebooks, Googlebooks & Accessories
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: Short ID (e.g., acer-gb14, hp-gb14, ctl-px14, anker-dock)
+            type: string
+            required: true
+          - name: name
+            label: Product Name
+            type: string
+            required: true
+          - name: category
+            label: Category
+            type: select
+            options:
+              values:
+                - Googlebooks
+                - Chromebook Plus
+                - Enterprise & EDU
+                - Accessories
+          - name: personas
+            label: Match Reader Personas (Select all that fit)
+            type: select
+            options:
+              multiple: true
+              values:
+                - googlebook-flagship
+                - enterprise-it
+                - power-user-dev
+                - everyday-plus
+                - student-edu
+                - accessories-desk
+          - name: badge
+            label: Highlight Badge (e.g., Best Value Googlebook, IT Fleet Pick)
+            type: string
+          - name: specs
+            label: Key Specs (e.g., 14" 3K OLED • Core Ultra 5 • 16GB/512GB)
+            type: string
+          - name: pitch
+            label: 1-Line Why Buy Pitch
+            type: string
+          - name: price_global
+            label: US / Global Price (e.g., $899)
+            type: string
+          - name: url_global
+            label: US / Global Affiliate Link (Best Buy / Amazon / OEM)
+            type: string
+          - name: store_global
+            label: Global Store Label (e.g., Best Buy US)
+            type: string
+          - name: price_india
+            label: India Price (optional, e.g., ₹48,990)
+            type: string
+          - name: url_india
+            label: India Affiliate Link (optional, Amazon.in / Flipkart)
+            type: string
+          - name: featured_hub
+            label: Pin to Top of Hardware Hub Page?
+            type: boolean
+            default: true
