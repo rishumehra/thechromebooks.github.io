@@ -18,10 +18,14 @@ topics:
     url: /categories/guides/
   - title: News
     url: /categories/news/
+  - title: Hardware Hub
+    url: /hardware/
 
 site:
   - title: About
     url: /about/
+  - title: Hardware Hub
+    url: /hardware/
   - title: Categories
     url: /categories/
   - title: Tags
