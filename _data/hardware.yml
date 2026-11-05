@@ -1,0 +1,134 @@
+items:
+  - id: acer-gb14
+    name: "Acer Googlebook 14 (GP714-91N-50A0)"
+    category: Googlebooks
+    personas:
+      - googlebook-flagship
+      - power-user-dev
+      - everyday-plus
+    badge: "Best Value Googlebook (2-in-1)"
+    specs: "14\" 3K 120Hz OLED Touch • Intel Core Ultra 5 325 (47 TOPS) • 16GB RAM • 512GB SSD"
+    pitch: "The most affordable entry into Googlebook OS—and the only first-gen launch model with a 360-degree convertible hinge."
+    price_global: "$899"
+    url_global: "https://www.bestbuy.com/product/acer-googlebook-14-laptop-14-3k-oled-120hz-touchscreen-intel-core-ultra-5-series-3-2026-16gb-memory-512gb-storage-elemental-blue/JJ8V8HLZP2"
+    store_global: "Best Buy US"
+    price_india: ""
+    url_india: "https://store.acer.com/en-us/acer-googlebook-14-gp714-91n-50a0"
+    featured_hub: true
+
+  - id: hp-gb14
+    name: "HP Googlebook 14 (CJ7X9AV-1)"
+    category: Googlebooks
+    personas:
+      - googlebook-flagship
+      - power-user-dev
+      - enterprise-it
+    badge: "19-Hour Battery King"
+    specs: "14\" 3K 120Hz OLED Touch • Snapdragon X Elite (12-Core, 45 TOPS) • 16GB LPDDR5X • 512GB Gen 5 SSD"
+    pitch: "Highest buyer-rated Googlebook (4.6/5) featuring native ARM efficiency, Wi-Fi 7, Titan C2 security, and marathon 19-hour endurance."
+    price_global: "$1,299"
+    url_global: "https://www.hp.com/us-en/shop/pdp/hp-googlebook-14-cj7x9av-1"
+    store_global: "HP Store US"
+    price_india: ""
+    url_india: ""
+    featured_hub: true
+
+  - id: lenovo-gb15
+    name: "Lenovo Googlebook 15 (83W6CTO1WWUS1)"
+    category: Googlebooks
+    personas:
+      - googlebook-flagship
+      - power-user-dev
+      - enterprise-it
+    badge: "Best Big-Screen Flagship"
+    specs: "15.3\" 2.8K 120Hz OLED Touch • Intel Core Ultra 5 325 (47 TOPS) • 16GB RAM • 512GB SSD • 2.84 lbs"
+    pitch: "Expansive 15.3-inch 500-nit OLED canvas with dual Thunderbolt 4 and full HDMI 2.0 in an ultralight sub-3 lb frame."
+    price_global: "$1,099"
+    url_global: "https://www.lenovo.com/us/en/p/laptops/googlebook/googlebook-series/lenovo-googlebook-15/83w6cto1wwus1"
+    store_global: "Lenovo US"
+    price_india: ""
+    url_india: ""
+    featured_hub: true
+
+  - id: asus-gb14
+    name: "ASUS Googlebook 14 (CX9406 'Lapis')"
+    category: Googlebooks
+    personas:
+      - googlebook-flagship
+      - power-user-dev
+    badge: "Featherweight Core Ultra 7"
+    specs: "14\" 2.8K 120Hz OLED Touch • Intel Core Ultra 7 355 (49 TOPS) • 16GB–32GB RAM • 2.20 lbs"
+    pitch: "Weighing just 1.0 kg, it is the only launch Googlebook configurable with an Intel Core Ultra 7 processor."
+    price_global: "$1,299"
+    url_global: "https://gbookhub.io/en/products/asus-googlebook-cx9406"
+    store_global: "View Specs & Retail"
+    price_india: ""
+    url_india: ""
+    featured_hub: true
+
+  - id: lenovo-plus-gen10
+    name: "Lenovo Chromebook Plus Gen 10 (14\" OLED)"
+    category: Chromebook Plus
+    personas:
+      - everyday-plus
+      - power-user-dev
+      - student-edu
+    badge: "50 TOPS NPU + OLED Value"
+    specs: "14\" WUXGA OLED • MediaTek Kompanio Ultra 910 (50 TOPS) • 12GB–16GB RAM • Wi-Fi 7 • 17-Hr Battery"
+    pitch: "Fanless ARM powerhouse delivering 50 TOPS on-device AI, Dolby Atmos quad speakers, and an OLED screen at a mid-range price."
+    price_global: "$599"
+    url_global: "https://www.lenovo.com"
+    store_global: "Lenovo Store"
+    price_india: "₹98,866"
+    url_india: "https://www.amazon.in"
+    featured_hub: true
+
+  - id: acer-spin-714
+    name: "Acer Chromebook Plus Spin 714 (Core Ultra)"
+    category: Chromebook Plus
+    personas:
+      - everyday-plus
+      - power-user-dev
+      - enterprise-it
+    badge: "Best Overall Chromebook Plus"
+    specs: "14\" 1920x1200 Touch (2-in-1) • Intel Core Ultra 5 / 7 • 8GB–16GB RAM • 256GB–512GB SSD"
+    pitch: "MIL-STD-810H aluminum convertible with dual Thunderbolt 4 ports, 2K webcam, and rock-solid daily performance."
+    price_global: "$699"
+    url_global: "https://store.acer.com"
+    store_global: "Acer Store"
+    price_india: "₹68,366"
+    url_india: "https://www.amazon.in"
+    featured_hub: true
+
+  - id: asus-cx34
+    name: "ASUS Chromebook Plus CX34 (14\" FHD)"
+    category: Chromebook Plus
+    personas:
+      - everyday-plus
+      - student-edu
+      - enterprise-it
+    badge: "Best Everyday & India Value"
+    specs: "14\" FHD Anti-Glare • Intel Core i3 / Core i5 • 8GB LPDDR5 • 128GB–512GB • 180° Hinge"
+    pitch: "Dependable workhorse widely available across both North America and official Indian retail channels."
+    price_global: "$449"
+    url_global: "https://www.asus.com"
+    store_global: "ASUS Global"
+    price_india: "₹41,990"
+    url_india: "https://www.amazon.in"
+    featured_hub: true
+
+  - id: ctl-px14
+    name: "CTL Chromebook Enterprise PX141E / NL73 Series"
+    category: Enterprise & EDU
+    personas:
+      - enterprise-it
+      - student-edu
+    badge: "Top Rugged EDU & Fleet Pick"
+    specs: "MIL-STD-810H Drop Tested • Spill-Resistant Keyboard • Modular Repairability • Zero-Touch Ready"
+    pitch: "Purpose-built for K-12 school districts and field fleets with pre-bundled Chrome Education/Enterprise upgrades."
+    price_global: "$349+"
+    url_global: "https://ctl.net/collections/chromebooks"
+    store_global: "CTL Official Store"
+    price_india: ""
+    url_india: ""
+    featured_hub: true
