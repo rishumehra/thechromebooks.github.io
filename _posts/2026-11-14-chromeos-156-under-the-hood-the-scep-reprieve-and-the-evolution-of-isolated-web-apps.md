@@ -15,6 +15,7 @@ tags:
   - tpm
   - isolated-web-apps
   - security
+image: /assets/img/posts/watermarked_img_5317485980192896028.webp
 pin: false
 featured: true
 tldr:
